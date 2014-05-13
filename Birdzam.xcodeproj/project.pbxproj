@@ -432,6 +432,7 @@
 				INFOPLIST_FILE = "Hello/Birdzam-Info.plist";
 				PRODUCT_NAME = Birdzam;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -448,6 +449,7 @@
 				INFOPLIST_FILE = "Hello/Birdzam-Info.plist";
 				PRODUCT_NAME = Birdzam;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

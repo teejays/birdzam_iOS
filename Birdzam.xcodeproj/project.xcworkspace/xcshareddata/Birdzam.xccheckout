@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>42A49845-88FB-4A74-A7E4-1F69177EE8F8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Birdzam</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DF22FEA0-EFA4-4886-B721-048DE06EB241</key>
+		<string>ssh://github.com/talhajansari/birdzam_iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Birdzam.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DF22FEA0-EFA4-4886-B721-048DE06EB241</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/talhajansari/birdzam_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DF22FEA0-EFA4-4886-B721-048DE06EB241</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DF22FEA0-EFA4-4886-B721-048DE06EB241</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Birdzam_iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
