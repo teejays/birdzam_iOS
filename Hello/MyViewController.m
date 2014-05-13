@@ -28,7 +28,7 @@
     
     // Declare ad initiate class variables
     _mainArray = [[NSArray alloc] initWithObjects:@"one", @"two", @"three", @"four", @"five", nil];
-    _serverURL = @"http://127.0.0.1:5000/classify";
+    _serverURL = @"http://iceboal.xicp.net:5001/classify";
     
 	// Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1_bw.jpg"]]];
