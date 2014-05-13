@@ -7,6 +7,7 @@
 //
 
 #import "ResultTableViewController.h"
+#import "SpecieViewController.h"
 
 @interface ResultTableViewController ()
 
@@ -96,7 +97,44 @@
 //    //NSString *p2 = [_prob objectAtIndex:indexPath.row]; // For displaying the probabilities
 //    NSString *valueAsString = [NSString stringWithFormat:@"%d. %@",indexPath.row+1, p1];
 //    NSLog(@"%@",valueAsString);
-    cell.imageView.image = [UIImage imageNamed:@"logo_5.png"];
+    
+
+    
+//    NSFileManager *filemgr;
+//    NSString *documentsPath;
+//    
+//    filemgr = [[NSFileManager alloc] init];
+//    documentsPath = [filemgr currentDirectoryPath];
+//    //documentsPath = [documentsPath stringByAppendingPathComponent:@""];
+//    
+//    NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsPath
+//                                                                        error:NULL];
+//    NSLog(@"%@",documentsPath);
+//    NSLog(@"Num files: %d",[dirs count]);
+//    NSString *test = [dirs objectAtIndex:4];
+//    NSLog(@"test %@", test);
+//    
+//    NSURL *containingURL = [[NSBundle mainBundle] resourceURL];
+//    NSURL *imageURL = [containingURL URLByAppendingPathComponent:@"Images" isDirectory:YES];
+//    NSFileManager *localFileManager = [[NSFileManager alloc] init];
+//    NSArray *content = [localFileManager contentsOfDirectoryAtURL:imageURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsSubdirectoryDescendants error:NULL];
+//    NSUInteger imageCount = [content count];
+//    NSLog(@"test2 %d", imageCount);
+//    cell.imageView.image = [UIImage imageNamed:imageName];
+    
+    NSString *imageName = [NSString stringWithFormat:@"%@.jpg",value];
+    
+    UIImage *thumbnail = [UIImage imageNamed:imageName];
+    if (thumbnail == nil) {
+        thumbnail = [UIImage imageNamed:@"logo_5.png"] ;
+    }
+    CGSize itemSize = CGSizeMake(40, 40);
+    UIGraphicsBeginImageContext(itemSize);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [thumbnail drawInRect:imageRect];
+    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
     cell.textLabel.text = valueAsString;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -104,16 +142,33 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showSpecie" sender:indexPath];
+    
+}
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"prepareForSegue2....");
+    if ([segue.identifier isEqualToString:@"showSpecie"]) {
+        NSLog(@"prepareForSegue2: identifier found..");
+        SpecieViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = sender;
+        NSString *key = [NSString stringWithFormat:@"%d",(indexPath.row)];
+        NSLog(@"%@",key);
+        NSString *value = [self.res valueForKey:key];
+        NSLog(@"%@",value);
+        //NSString *valueAsString = [NSString stringWithFormat:@"%d. %@",indexPath.row+1, value];
+        NSString *imageName = [NSString stringWithFormat:@"%@.jpg",value];
+        UIImage *thumbnail = [UIImage imageNamed:imageName];
+        if (thumbnail == nil) {
+            thumbnail = [UIImage imageNamed:@"logo_5.png"] ;
+        }
+        detailViewController.image = thumbnail;
+    }
 }
-*/
 
 @end

@@ -28,7 +28,9 @@
     
     // Declare ad initiate class variables
     _mainArray = [[NSArray alloc] initWithObjects:@"one", @"two", @"three", @"four", @"five", nil];
-    _serverURL = @"http://iceboal.xicp.net:5001/classify";
+//    _serverURL = @"http://iceboal.xicp.net:5001/classify";
+   _serverURL = @"http://127.0.0.1:5000/classify";
+
     
 	// Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1_bw.jpg"]]];
@@ -240,7 +242,6 @@
         {
             NSString *filenames = [NSString stringWithFormat:@"SoundLabel"];
             NSLog(@"%@", filenames);
-//            NSString *urlString = @"http://127.0.0.1:5000/classify";
             NSString *urlString = _serverURL;
             NSLog(@"%@", urlString);
             

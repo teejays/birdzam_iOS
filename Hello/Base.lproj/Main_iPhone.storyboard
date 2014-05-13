@@ -123,9 +123,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="lkR-kI-W2D" kind="push" id="2zG-kR-3Pr"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -148,15 +145,18 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="lkR-kI-W2D" kind="push" identifier="showSpecie" id="TQ0-sy-L7f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgc-aF-ffo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="818" y="-943"/>
         </scene>
-        <!--View Controller-->
+        <!--Specie View Controller-->
         <scene sceneID="cGa-oP-gqc">
             <objects>
-                <viewController id="lkR-kI-W2D" sceneMemberID="viewController">
+                <viewController id="lkR-kI-W2D" customClass="SpecieViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IqF-Rk-iAu"/>
                         <viewControllerLayoutGuide type="bottom" id="o8f-ID-60R"/>
@@ -165,14 +165,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_4.png" translatesAutoresizingMaskIntoConstraints="NO" id="DID-kd-M6S">
-                                <rect key="frame" x="0.0" y="85" width="320" height="309"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DID-kd-M6S">
+                                <rect key="frame" x="35" y="110" width="251" height="272"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SCd-TI-aDE"/>
+                    <connections>
+                        <outlet property="specieImage" destination="DID-kd-M6S" id="7sd-1N-awM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hh3-hL-oMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,9 +200,6 @@
             <point key="canvasLocation" x="400" y="-938"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="logo_4.png" width="445" height="440"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
